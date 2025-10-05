@@ -35,7 +35,7 @@ jobs:
     
     - name: Run basic tests
       run: |
-        python -c "import pandas; import sklearn; print('✅ Dependencies OK')"
+        uv run python -c "import pandas; import sklearn; print('✅ Dependencies OK')"
 
   build-docker:
     needs: test
