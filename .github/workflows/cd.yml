@@ -33,7 +33,8 @@ jobs:
           ${{ secrets.DOCKER_USERNAME }}/attrition-mlop:latest
           ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:${{ github.sha }}
     
-    - name: Deploy notification
+    - name: Deploy to Render
       run: |
-        echo "🚀 Deployment successful!"
-        echo "Image: ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:latest"
+          curl -X POST https://api.render.com/deploy/srv-d3h1f7h5pdvs73esnudg \
+          -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          -H "Accept: application/json"
