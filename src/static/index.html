@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Employee Attrition Predictor</h1>
+            <p>Predict the likelihood of employee attrition using machine learning</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Form -->
+            <div class="form-section">
+                <h2>Employee Information</h2>
+                <form id="predictionForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" required min="18" max="70" value="35">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="monthly_income">Monthly Income ($)</label>
+                            <input type="number" id="monthly_income" name="monthly_income" required min="0" value="5000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="years_at_company">Years at Company</label>
+                            <input type="number" id="years_at_company" name="years_at_company" required min="0" value="5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="distance_from_home">Distance from Home (km)</label>
+                            <input type="number" id="distance_from_home" name="distance_from_home" required min="0" value="10">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="education">Education Level (1-5)</label>
+                            <input type="number" id="education" name="education" required min="1" max="5" value="3">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" name="department" required>
+                                <option value="Sales">Sales</option>
+                                <option value="Research & Development">Research & Development</option>
+                                <option value="Human Resources">Human Resources</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job_role">Job Role</label>
+                            <select id="job_role" name="job_role" required>
+                                <option value="Sales Executive">Sales Executive</option>
+                                <option value="Research Scientist">Research Scientist</option>
+                                <option value="Laboratory Technician">Laboratory Technician</option>
+                                <option value="Manufacturing Director">Manufacturing Director</option>
+                                <option value="Healthcare Representative">Healthcare Representative</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Sales Representative">Sales Representative</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="marital_status">Marital Status</label>
+                            <select id="marital_status" name="marital_status" required>
+                                <option value="Single">Single</option>
+                                <option value="Married" selected>Married</option>
+                                <option value="Divorced">Divorced</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="business_travel">Business Travel</label>
+                            <select id="business_travel" name="business_travel" required>
+                                <option value="Non-Travel">Non-Travel</option>
+                                <option value="Travel_Rarely" selected>Travel Rarely</option>
+                                <option value="Travel_Frequently">Travel Frequently</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="education_field">Education Field</label>
+                            <select id="education_field" name="education_field" required>
+                                <option value="Life Sciences" selected>Life Sciences</option>
+                                <option value="Medical">Medical</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Technical Degree">Technical Degree</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="over_time">Over Time</label>
+                            <select id="over_time" name="over_time" required>
+                                <option value="No" selected>No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-predict" id="predictBtn">
+                        🔮 Predict Attrition
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>Prediction Result</h2>
+                <div class="result-card" id="resultCard">
+                    <div class="result-icon" id="resultIcon">🎯</div>
+                    <h3 id="predictionText">--</h3>
+                    <div class="probability-bar">
+                        <div class="probability-fill" id="probabilityFill"></div>
+                    </div>
+                    <p class="probability-text">
+                        Attrition Probability: <strong id="probabilityValue">--</strong>
+                    </p>
+                    <div class="risk-badge" id="riskBadge">--</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by FastAPI + MLflow + scikit-learn</p>
+            <a href="/docs" target="_blank">API Documentation</a>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

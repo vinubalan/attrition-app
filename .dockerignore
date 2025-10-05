@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data (don't include raw data in Docker image)
+data/raw/*
+data/processed/*
+
+# Keep only the model files we need
+!models/*.pkl
+
+# Git
+.git/
+.gitignore
+
+# Notebooks
+notebooks/
+*.ipynb
+
+# Documentation
+README.md
+docs/
+
+# OS
+.DS_Store
+Thumbs.db

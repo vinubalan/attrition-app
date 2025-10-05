@@ -1,0 +1,26 @@
+[project]
+name = "attrition-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dvc>=3.63.0",
+    "fastapi>=0.118.0",
+    "mlflow>=3.4.0",
+    "numpy>=2.3.3",
+    "optuna>=4.5.0",
+    "pandas>=2.3.3",
+    "pydantic>=2.11.10",
+    "scikit-learn>=1.7.2",
+    "uvicorn>=0.37.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.9.0",
+    "mypy>=1.18.2",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.13.3",
+]
