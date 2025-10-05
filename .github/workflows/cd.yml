@@ -30,7 +30,7 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/attrition-mlop:latest
+          ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:latest
           ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:${{ github.sha }}
     
     - name: Deploy to Render
