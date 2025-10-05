@@ -21,6 +21,7 @@ RUN uv pip install --system --no-cache -r pyproject.toml
 # Copy application code
 COPY src/ ./src/
 COPY models/ ./models/
+COPY mlruns/ ./mlruns/
 
 # Expose port
 EXPOSE 8000
