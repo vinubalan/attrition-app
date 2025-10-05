@@ -24,14 +24,14 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        push: true
-        tags: |
-          ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:latest
-          ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:${{ github.sha }}
+    # - name: Build and push Docker image
+    #   uses: docker/build-push-action@v5
+    #   with:
+    #     context: .
+    #     push: true
+    #     tags: |
+    #       ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:latest
+    #       ${{ secrets.DOCKER_USERNAME }}/attrition-mlops:${{ github.sha }}
     
     - name: Deploy to Render
       run: |
