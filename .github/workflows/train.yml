@@ -1,0 +1,49 @@
+name: Model Training
+
+on:
+  push:
+    paths:
+      - 'data/raw/**'
+      - 'src/models/train.py'
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    
+    - name: Install UV
+      uses: astral-sh/setup-uv@v2
+    
+    - name: Install dependencies
+      run: |
+        uv venv
+        uv pip install -r pyproject.toml
+    
+    - name: Train model
+      run: |
+        source .venv/bin/activate
+        python src/models/train.py
+    
+    - name: Upload model artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: trained-model
+        path: |
+          models/*.pkl
+          mlruns/
+        retention-days: 30
+    
+    - name: Create release on success
+      if: success()
+      run: |
+        echo "Model trained successfully on $(date)"
+        echo "Check artifacts for model files"
