@@ -1,0 +1,10 @@
+artifact_location: file:///Users/vinubalan/projects/attrition-app/mlruns/529209643183202858/models/m-9dfc39d6828249198220088baafe3059/artifacts
+creation_timestamp: 1759640677655
+experiment_id: '529209643183202858'
+last_updated_timestamp: 1759640678801
+model_id: m-9dfc39d6828249198220088baafe3059
+model_type: null
+name: model
+source_run_id: e9c02ce0e9984d56b9bf0aa388eb61b2
+status: 2
+status_message: null

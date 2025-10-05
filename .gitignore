@@ -29,10 +29,6 @@ data/processed/*
 models/*.pkl
 !models/.gitkeep
 
-# MLflow
-mlruns/
-mlartifacts/
-
 # Testing
 .pytest_cache/
 .coverage
