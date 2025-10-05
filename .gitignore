@@ -26,8 +26,8 @@ data/processed/*
 !data/processed/.gitkeep
 
 # Models - Don't commit trained models (they'll be in MLflow)
-models/*.pkl
-!models/.gitkeep
+# models/*.pkl
+# !models/.gitkeep
 
 # Testing
 .pytest_cache/
